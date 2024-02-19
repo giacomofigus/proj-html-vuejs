@@ -1,6 +1,65 @@
 <script>
+  import Courses from './Courses.vue';
+
   export default{
-    name: "AppMain"
+    name: "AppMain",
+    components:{
+      Courses
+    },
+    data(){
+      return{
+        popularCourses: [
+          {
+            img: "246154_d8b0_3-272x161.jpg",
+            genre:"Development",
+            paragraph:"The Complete iOS 10 & Swift 3 Developer Course",
+            stars: 4,
+            fullPrice: "$199.99",
+            price: "$100"
+          },
+          {
+            img: "752950_b773-272x161.jpg",
+            genre:"Development",
+            paragraph:"The Complete iOS 10 & Swift 3 Developer Course",
+            stars: 4,
+            fullPrice: "$199.99",
+            price: "$100"
+          },
+          {
+            img: "895786_7b4b_2-272x161.jpg",
+            genre:"Development",
+            paragraph:"The Complete iOS 10 & Swift 3 Developer Course",
+            stars: 4,
+            fullPrice: "$199.99",
+            price: "$100"
+          },
+          {
+            img: "1253188_58f7_2-272x161.jpg",
+            genre:"Development",
+            paragraph:"The Complete iOS 10 & Swift 3 Developer Course",
+            stars: 4,
+            fullPrice: "$199.99",
+            price: "$100"
+          },
+          {
+            img: "951684_9c1a_2-544x322.jpg",
+            genre:"Development",
+            paragraph:"The Complete iOS 10 & Swift 3 Developer Course",
+            stars: 4,
+            fullPrice: "$199.99",
+            price: "$100"
+          },
+          {
+            img: "919872_ed54_6-272x161.jpg",
+            genre:"Development",
+            paragraph:"The Complete iOS 10 & Swift 3 Developer Course",
+            stars: 4,
+            fullPrice: "$199.99",
+            price: "$100"
+          },
+        ]
+      }
+    }
   }
 </script>
 
@@ -18,6 +77,14 @@
         <img src="../../public/img/slide-1.jpg" alt="" class="">
 
         <div class="triangle-up"></div>
+      </div>
+    </div>
+
+    <div  class="mt-5 px-5">
+      <h5 class="text-bold">Popular Development Courses</h5>
+
+      <div id="containerCourse" class="d-flex flex-wrap justify-content-center mt-4">
+        <Courses v-for="(element,index) in popularCourses" :propsElement="element" :key="index" />
       </div>
     </div>
   </main>
@@ -55,5 +122,17 @@
         left: -200px;
       }
     }
+
+    div{
+      h5{
+        padding-left: 10px;
+      }
+
+      #containerCourse{
+        gap: 20px;
+      }
+    }
+
+
   }
 </style>
