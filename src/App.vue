@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <h1>cioa</h1>
+  <h1>ciao</h1>
 </template>
 
-<style lang="sass">
-  
+<style lang="scss">
+  @use './styles/general.scss'
 </style>
