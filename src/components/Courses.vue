@@ -50,4 +50,22 @@
         font-size: 18px;
     }
 
+    @media screen and (max-width: 1440px){
+        div{
+            flex-basis: calc(100% / 4 - 20px);
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        div{
+            flex-basis: calc(100% / 2 - 20px);
+        }
+    }
+
+    @media screen and (max-width: 425px){
+        div{
+            flex-basis: calc(100% / 1 - 20px);
+        }
+    }
+
 </style>

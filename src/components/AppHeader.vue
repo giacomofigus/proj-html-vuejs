@@ -32,23 +32,28 @@
 
 <template>
     <header>
-        <nav id="topNav" class="border-bottom d-flex justify-content-between ">
-            <div class="ps-5 ">
+        <nav id="topNav" class="border-bottom d-flex justify-content-between px-3 px-lg-3 px-xl-5 ">
+            <div class="d-md-block d-sm-none d-none">
                 <select >
                     <option value="English">English</option>
                     <option value="Italian">Italian</option>
                     <option value="Dutch">Dutch</option>
                     <option value="French">French</option>
                 </select>
+
+                
             </div>
+            
+            <span class="d-sm-block d-md-none text-secondary">
+                Menu
+            </span>
 
 
-            <div class="d-flex align-items-center pe-5 gap-3">
+            <div class="d-flex align-items-center gap-3">
                 <ul class="d-flex gap-4 "> 
-                    <li v-for="(element, index) in arrayMenu">
+                    <li v-for="(element, index) in arrayMenu" class="d-sm-none d-md-block d-none">
                         <a :href="element.link">{{ element.label }}</a>
                     </li>
-
                 </ul>
 
                 <ul class="d-flex gap-3 fs-5">
@@ -62,14 +67,14 @@
             </div>
         </nav>
 
-        <nav id="middleNav" class="py-4 px-5 d-flex align-items-center justify-content-between">
+        <nav id="middleNav" class="py-4 px-3 px-xl-5 ps-lg-3 pe-lg-3 pe-xl-5 d-flex align-items-center justify-content-between">
             <figure class="m-0">
                 <img src="/img/MasterStudy.svg" alt="Logo">
             </figure>
 
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center d-none d-lg-flex">
                 <i class="fa-solid fa-bars me-1"></i>
-                <span class="">CATEGORY</span>
+                <span class="d-none d-xl-block">CATEGORY</span>
 
                 <div class="ms-3 wrap">
                     <div class="search">
@@ -81,30 +86,28 @@
                 </div>
             </div>
 
-            <div class="d-flex align-items-center">
-                <i class="fa-solid fa-bullhorn me-2"></i>
-                <span>Become an Instructor</span>
+            <div class="d-flex align-items-center d-none d-lg-flex">
+                <i class="fa-solid fa-bullhorn me-3 me-lg-1 me-md-3 me-1"></i>
+                <span class="d-none d-lg-none d-xl-block me-3">Become an Instructor</span>
 
-                <div class="ms-4">
-                    <i class="fa-solid fa-briefcase me-2"></i>
-                    <span>For Enterprise</span>
-                </div>
-
+                <i class="fa-solid fa-briefcase me-1"></i>
+                <span class="d-none d-lg-none d-xl-block ">For Enterprise</span>
             </div>
 
             <div class="d-flex align-items-center">
-                <i class="fa-regular fa-user me-1"></i>
-                <span>Log in</span>
+                <i class="fa-solid fa-magnifying-glass me-4 d-block d-md-block d-lg-none "></i>
+                <i class="fa-regular fa-user  me-1"></i>
+                <span class="d-none d-lg-none d-xl-block me-3">Log in</span>
 
-                <button id="signUp" class="ms-3 me-3 px-4 py-3 rounded-pill border border-none">
+                <button id="signUp" class="ms-3 me-3 px-4 py-3 rounded-pill border border-none d-none d-lg-flex">
                     Sign up
                 </button>
 
-                <i class="fa-regular fa-bookmark fs-4"></i>
+                <i class="fa-regular fa-bookmark fs-4 d-none d-lg-flex"></i>
             </div>
         </nav>
 
-        <nav id="bottomNav" class="d-flex justify-content-center py-4">
+        <nav id="bottomNav" class="d-flex justify-content-center py-4 d-none d-lg-flex  ">
             <ul class="d-flex gap-5 m-0">
                 <li v-for="(element, index) in arrayBottom">
                     <i :class="element.iconClass"></i>
@@ -170,5 +173,41 @@
             font-weight: 300;
             font-size: 18px;
         }
+    }
+
+    @media screen and (max-width: 1440px) {
+        header{
+            #middleNav{
+            color: grey;
+            .wrap{
+                .search{
+                    input{
+                        width: 200px;
+                        background-color: #F0F2F5;
+                    }
+
+                    button{
+                        background-color: #457992;
+                        
+                        i{
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            i{
+                color: #457992;
+            }
+
+            #signUp{
+                background-color: #FF4450;
+                color: white;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+        }
+        
     }
 </style>
